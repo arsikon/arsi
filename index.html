@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="slidegambar.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/bootstrap.css"> 
+
+	<!-- google map API -->
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+	<script>
+	function initialize() {
+	  var propertiPeta = {
+	    center:new google.maps.LatLng(-8.5830695,116.3202515),
+	    zoom:9,
+	    mapTypeId:google.maps.MapTypeId.ROADMAP
+	  };
+	  
+	  var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+	  
+	  // membuat Marker
+	  var marker=new google.maps.Marker({
+	      position: new google.maps.LatLng(-8.5830695,116.3202515),
+	      map: peta,
+	      animation: google.maps.Animation.BOUNCE
+	  });
+
+		}
+
+	// event jendela di-load  
+	google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+    
+
+	<!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+
+	<title>Mutiara Event</title>
+</head>
+
+<body class="warna">
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> -->
+
+<!-- CCS Navbar -->
+<style type="text/css">
+
+
+
+.logo{
+
+    background-image: url(img/tiket1.png);
+    position: position: fixed;
+    width: 40px;
+    margin: 4px 14px;
+    height: 40px;
+    background-size: 40px 40px;
+    border: solid 2px #666;
+    border-radius: 50px;
+    background-color: #fff
+}
+.navbar-left{
+    float:left;
+
+}
+.navbar-right{
+    float:right;
+    width:260px;
+    padding-right:10px;
+}
+.navbar{width:auto;
+    height:50px;
+    background:#444;
+    border-radius:2px;
+}
+ 
+.navbar ul{
+    float:left;
+    margin:0;
+    padding:0;
+}
+.navbar li{
+    float:left;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+.navbar li a, .navbar li a:link {
+    float: left;
+    padding: 17px 12px;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+.navbar li a:hover{
+    background: #ddd;
+    color: #444;
+}
+.navbar li li a, .navbar li li a:link {
+    text-decoration: none;
+    font-size: 16px;
+    background: #444;
+    color: #fff;
+    width: 108px;
+    padding: 0px 0px 0 12px;
+    font-size: 12px;
+    line-height: 35px;
+}
+.navbar li li a:hover{
+    background: #ddd;
+    color: #444
+}
+.navbar li ul{
+    z-index:9999;
+    position:absolute;
+    left:-999em;
+    height:auto;
+    width:120px;
+    margin-top:50px;
+    border:1px solid #666;
+}
+.navbar li:hover ul,
+.navbar li li:hover ul,
+.navbar li li li:hover ul{left:auto;}
+.navbar li:hover{position:auto;}
+li a#dropdown{
+    width: 96%;
+    height: 50%;
+    background-color: #9BC7D3;
+    padding-left :5px;
+}
+
+/*konten body*/
+.grid-container {
+  display: grid;
+  grid-template-columns: 800px auto;
+  grid-gap: 10px;
+  background-color: white;
+  padding: 10px;
+
+}
+
+.grid-container > div {
+  background-color: white;
+  border: 2px solid red;
+  text-align: center;
+  font-size: 30px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 10px;
+  background-color: #989898;
+  padding: 10px;
+}
+
+/*rata kanan kiri konten*/
+	.left    { text-align: left;}
+  	.right   { text-align: right;}
+  	.center  { text-align: center;}
+  	.justify { text-align: justify;}
+
+
+   .info {
+   	background-color: white;
+	border-bottom: 1px solid #0A9687;
+	padding-bottom: 2px;
+	padding-top: 10px;
+
+}
+
+   .judul {
+   	padding: 10px;
+  	font-size: 30px;
+	/*line-height: normal;*/
+	font-weight: 600;
+	height: 1px;
+}
+
+   .tanggal {
+  	padding: 10px;
+  	font-size: 20px;
+	line-height: normal;
+	font-weight: 600;
+	padding-bottom: 1px;
+	height: 1px;
+}
+
+	.alamat {
+  	padding: 10px;
+  	font-size: 15px;
+	line-height: normal;
+	font-weight: 600;
+	padding-top: 1px;
+	/*padding-bottom: 1px;*/
+	margin-bottom: 1px;
+}
+
+.container {
+  display: grid;
+ /* grid-template-columns: auto;*/
+  width: 1283px;
+  grid-gap: 10px;
+  background-color: green;
+  padding: 10px;
+}
+
+
+.tiket{
+	padding-top: 100px;
+}
+
+
+.tabel_tiket{
+ padding: 20px;
+ background-color: white;
+}
+
+.tiketbox1{
+	vertical-align: 1px;
+}
+
+.w3-button{
+  background-color: #ffbf00; /* Green */
+  border-radius: 18px;
+  color: #000000;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  
+}
+
+.w3-button:hover{
+	box-shadow:0 0 7px 5px lightblue;
+}
+
+.footer{
+	padding: auto;
+}
+
+.googlemap{
+	padding: 20px;
+}
+
+</style>
+
+<!-- Navbbar -->
+ 	
+ 	<nav class="navbar">
+    <div class="navbar-left"><div class="logo"></div></div>
+    <div class="navbar-right">
+        <ul>
+
+            <li><a href="index.html">Info</a></li>
+            <li><a href="daftar.html">Registrasi</a></li>
+            <li><a>Lebih &nabla;</a>
+                <ul class="dropdown-list">
+                    <li><a class="dropdown" href="#">Kontak</a></li>
+                    <li><a class="dropdown" href="#">Alamat</a></li>
+                </ul>
+            </li>
+            <li><a href='#'>Test</a></li>
+        </ul>
+    </div>
+</nav>
+
+	<nav class="container">
+		<div class=slidergambar>
+			<div class=isi-slider>
+				<img src="img/gambar1.jpg" alt="Gambar 1">
+				<img src="img/gambar2.jpg" alt="Gambar 2">
+				<img src="img/gambar3.jpg" alt="Gambar 3">
+				<img src="img/gambar4.jpg" alt="Gambar 4">
+			</div>
+		</div>
+	</nav>
+
+
+	
+
+
+								 <table class="tabel_tiket" >
+								 	<tr>
+								 		<td valign="top" width="1000px" >
+								 			<div class="info">
+								 				<h3 class="judul"> Mutiara Event</h3>
+								 				<h3 class="tanggal"> 07 Jun 2020 </h3>
+								 				<h3 class="alamat">Bumi Perkemahan Cibubur | Jakarta, Indonesia </h3>
+								 			</div>
+								 			<div class="artikel">
+								 				<h1 class="tulisan_satu">
+													<p class="justify">Sebagai bagian dari rangkaian&nbsp;kegiatan&nbsp;HUT&nbsp;KE-68, Komando Pasukan Khusus mengajak masyarakat untuk mencoba&nbsp;latihan kesehariannya melalui ajang&nbsp;<em>&ldquo;Komando Warriors IV - Strength Of The Warriors&rdquo;</em>. Tujuan utama dari kegiatan ini adalah untuk meningkatkan sinergitas antara Kopassus TNI AD dengan masyarakat melalui olahraga yang di &ldquo;<em>design&rdquo;&nbsp;</em>oleh Kopassus, menantang, namun tetap aman dan menyenangkan.&nbsp;Kompetisi ini menyediakan tantangan halang rintang (<em>Military Obstacles</em>) yang dipadukan dengan&nbsp;<em>CrossFit</em>&nbsp;disepanjang rute lari 4,8K. Nuansa militer pasukan khusus juga akan tampak di sekitar&nbsp;<em>race location</em>. Dan di tahun ini akan ada special obstacle SHOOTING menggunakan properti Komando Pasukan Khusus.</p>
+
+													<p class="justify">Selain sejumlah hiburan yang akan menemani di hari pelaksanaan, para&nbsp;<em>finisher</em>&nbsp;pun akan menikmati nuansa militer pasukan khusus yang disediakan antara lain&nbsp;<em>Special Force Photo Booth</em>&nbsp;dan beberapa pameran yang diadakan oleh KOPASSUS. Tidak ketinggalan juga&nbsp;<em>booth-booth&nbsp;</em>dari para sponsor yang ikut meramaikan.
+													</p></h1>
+
+													<h2 style="font-style:italic"><strong><em>Informasi dan Peraturan Komando Warriors IV</em></strong></h2>
+
+													<p>&nbsp;</p>
+
+													<h3><strong><em>Section 1 : Peraturan Umum</em></strong></h3>
+
+													<ol>
+														<li>
+														<p><em>Kategori pelajar harus berumur minimal 13th dan maksimal 18th</em></p>
+														</li>
+														<li>
+														<p><em>Warriors harus mengikuti peraturan resmi yang sudah ditetapkan panitia Komando Warriors IV dan keputusan panitia bersifat MUTLAK</em></p>
+														</li>
+														<li>
+														<p><em>Selalu mengutamakan sportivitas kepada sesama peserta Komando Warriors IV</em></p>
+														</li>
+														<li><em>Memahami dan mengikuti peraturan di sepanjang jalur lari yang sudah ditentukan</em></li>
+													</ol>
+
+													<p>&nbsp;</p>
+
+													<h3><strong><em>Section 2: Catatan Waktu dan Jarak</em></strong></h3>
+
+													<ol>
+														<li><em>Warriors harus menyelesaikan jarak tempuh total sejauh 5km</em></li>
+														<li><em>Warriors harus mengikuti gelombang start/wave sesuai kategori yang diikuti. Marshal dan Race Director akan mengarahkan Warriors saat akan melakukan start. Warriors yang melakukan start tidak sesuai dengan gelombangnya otomatis akan ter-diskualifiakasi catatan waktunya</em></li>
+														<li><em>Warriors akan mendapatkan nomor BIB dan gelang chip timing saat Race Pack Collection. Warriors otomatis akan ter-diskualifikasi apabila tidak menggunakan kedua item tersebut</em></li>
+														<li><em>Warriors harus berada di garis start 5 menit sebelum gelombang/wave sesuai dengan kategori yang diikuti untuk mendapatkan briefing dari Race Director</em></li>
+													</ol>
+
+													<p>&nbsp;</p>
+
+													<h3><em><strong>Section 3: Race dan Obstacle</strong></em></h3>
+
+													<ol>
+														<li><em>Warriors wajib berlari di jalur yang sudah di marking oleh Komando Warriors IV dan menyelesaikan semua rintangan obstacle</em></li>
+														<li><em>Warriors yang terpantau memotong jalur baik disengaja atau tidak sengaja otomatis akan di diskualifikasi dari catatan waktu Warriors tersebut</em></li>
+														<li><em>Menyelesaikan semua rintangan/obstacle WAJIB bagi Warriors yang ingin mendapatkan podium. Penalti waktu akan dikenakan kepada Warriors yang tidak bisa melewati rintangan/obstacle</em></li>
+														<li><em>Warriors yang tidak bisa melewati rintangan/obstacle dianjurkan untuk mendahulukan Warriors lain yang akan melewati rintangan yang sama</em></li>
+														<li><em>Warriors yang dengan sengaja menutup jalur peserta lain akan mendapatkan sangsi penalti dari Marshal</em></li>
+														<li><em>Warriors yang gagal melewati rintangan/obstacle akan dikenakan penalti waktu, Warriors diharuskan memposisikan diri di penalti area yang sudah ditentukan, dan menunggu aba2 dari Marshal untuk kembali ke jalur lari menuju rintangan berikutnya</em></li>
+													</ol>
+
+													<p>&nbsp;</p>
+
+													<h3><em><strong>Section 4: Gear &amp; Apparel</strong></em></h3>
+
+													<ol>
+														<li><em>Warriors wajib menggunakan sepatu yang aman dan sesuai dengan kontur track yang akan dilewati</em></li>
+														<li><em>Jika Warriors harus tetap menggunakan kaca mata saat berlari, diwajibkan untuk menggunakan kaca mata yang aman (kaca mata khusus olahraga) saat digunakan melewati rintangan</em></li>
+														<li><em>Warriors dilarang untuk menggunakan alat bantu saat melewati rintangan/obstacle</em></li>
+														<li><em>Alkohol, senjata tajam atau benda berbahaya lainnya tidak diperbolehkan selama acara berlangsung</em></li>
+													</ol>
+
+													<p>&nbsp;</p>
+
+													<h3><em><strong>Section 5: Penalti &amp; Komplain</strong></em></h3>
+
+													<ol>
+														<li><em>Penilaian penalty atau diskualifikasi akan diputuskan di race central setelah mendapatkan konfirmasi dari team Marshal disertai dengan bukti yang valid</em></li>
+														<li><em>Kategori penalty adalah: gagal menyelesaikan obstacle, start tidak sesuai dengan kategori dan meninggalkan track lari</em></li>
+														<li><em>Keputusan penalty / diskualifikasi akan mempertimbangkan informasi dari kedua belah pihak (Marshal dan Warriors). Warriors diharuskan untuk segera melapor ke Race Central apabila ingin mengajukan complain</em></li>
+														<li><em>Komplain diterima di Race Central maksimal 30 menit sebelum pengumuman podium. Dan dikenakan biaya </em><em>&ldquo;</em><em>complain challenge</em><em>&rdquo;</em><em> sebesar IDR 300.000,</em></li>
+													</ol>
+
+													<p>&nbsp;</p>
+
+													<h3><em><strong>Section 6: Safety and Keadaaan Darurat</strong></em></h3>
+
+													<ol>
+														<li><em>Keselamatan Warriors dan keamanan rintangan yang digunakan adalah prioritas utama Komando Warriors IV, jika terjadi situasi darurat team Marshal akan menggunakan prosedur yang sudah ditetapkan</em></li>
+														<li><em>Jika kondisi Warriors tidak memungkinkan, Marshal berhak memutuskan Warriors tersebut harus di evakuasi</em></li>
+													</ol>
+
+													<h1 class="tulisan_dua">Belajar CSS Dasar di www.malasngoding.com</h1>
+								 			</div>
+								 		</td>
+								 		<td class="tiketbox1" width="500px">
+								 			<div class="tiketbox" style="background-color: #00ffff;">
+								 				<br>
+								 				<div align="center" class="tombol">
+								 					<!-- <p align="center"><button class="w3-button w3-round-xlarge">PESAN TIKET</button></p> -->
+								 					<a class="w3-button" href="daftar.html">PESAN TIKET</a>
+								 				</div>
+
+								 				<div class="harga">						
+								 					<ul class="info" style="background-color: #ffbf00;">
+								 				
+								 							<h3 class="title">Harga Tiket :</h3>
+								 						<li>
+								 							<h3 class="title">Umum</h3>
+								 							<p style="font-size: 13px">Harga</p>
+								 							<p>
+								 								<b>
+								 									<i>
+								 										<span>
+								 											IDR 250.000
+								 										</span>
+								 									</i>
+								 								</b>
+								 							</p>
+								 						</li>
+
+								 						<li>
+								 							<h3 class="title">Pelajar</h3>
+								 							<p style="font-size: 13px">Harga</p>
+								 							<p>
+								 								<b>
+								 									<i>
+								 										<span>
+								 											IDR 150.000
+								 										</span>
+								 									</i>
+								 								</b>
+								 							</p>
+								 						</li>
+
+								 						<li>
+								 							<h3 class="title">Solo Putra</h3>
+								 							<p style="font-size: 13px">Harga</p>
+								 							<p>
+								 								<b>
+								 									<i>
+								 										<span>
+								 											IDR 100.000
+								 										</span>
+								 									</i>
+								 								</b>
+								 							</p>
+								 						</li>
+								 						<li>
+								 							<h3 class="title">Solo Putri</h3>
+								 							<p style="font-size: 13px">Harga</p>
+								 							<p>
+								 								<b>
+								 									<i>
+								 										<span>
+								 											IDR 100.000
+								 										</span>
+								 									</i>
+								 								</b>
+								 							</p>
+								 						</li>
+
+
+								 					</ul>
+								 				</div>
+								 			</div>
+								 		</td>
+								 	</tr>
+								 	
+								 </table>
+
+
+
+  <!-- Elemen yang akan menjadi kontainer peta -->
+  <div class="googlemap"style="background-color: white;">
+  	<h1>Lokasi Mutiara</h1>
+
+  	  <div id="googleMap" style="width:840px;height: 450px;"> </div>
+
+  </div>
+  
+
+
+
+							<footer style="background-color: white;">
+
+									<div style="padding: 1px">
+										<p align="center" style="font-size: 20px">Mutiara Event</p>
+										<p align="center"> Copyright @ 2020 </p>
+									</div>
+							  		
+							</footer>
+
+</body>
+</html>
